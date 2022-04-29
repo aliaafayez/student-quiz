@@ -109,21 +109,6 @@ function isPassValid(pass) {
     let passRegEx = /^[1-9]{4,10}$/;
     return pass.match(passRegEx);//return null or object
 }
-/*4-gender validation*/
-
-function isGenderValid() {
-
-
-    var isNotChecked = true;
-    for (var i = 0; i < gender.length; i++) {
-        if (gender[i].checked) {
-            isNotChecked = false
-        } return isNotChecked;
-
-    }
-
-
-}
 
 
 
