@@ -129,8 +129,9 @@ function isEmailValid(email) {
 }
 /*3- password validation */
 function isPassValid(pass) {
-    let passRegEx = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
-    return pass.match(passRegEx);//return null or object
+    let trimPass=pass.trim();
+    let passRegEx = /^(?=.*[0-9])(?=.*[!@#$%^&*_])[a-zA-Z0-9!@#$%^&*_]{6,16}$/;
+    return trimPass.match(passRegEx);//return null or object
 }
 
 
