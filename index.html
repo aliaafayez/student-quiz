@@ -1,9 +1,74 @@
-<html >
+<html>
+
 <head>
-    
+    <link rel="stylesheet" href="style.css">
     <title>Student Quiz </title>
+
 </head>
+
 <body>
-    <h1>quiz</h1>
+    <form action="#">
+
+        
+        <table cellspacing="8px">
+            <tr ><td  colspan="2" > <h1>Sign Up</h1></td></tr>
+            <!--Name-->
+            <tr>
+                <td rowspan="2"><label>User Name</label></td>
+                <td><input class="input_td" name="user_Name" id="user_name"  type="text"></td>
+            </tr>
+            <tr>
+                <td> <span name="name_span" id="name_span">user name is invalid</span> </td>
+            </tr>
+            <!--password-->
+            <tr>
+                <td rowspan="2"><label>User Password</label></td>
+                <td><input class="input_td" name="user_password" id="user_password" is="user_password" type="password"></td>
+            </tr>
+            <tr>
+                <td> <span name="pass_span" id="pass_span">your Password is invalid</span> </td>
+            </tr>
+            <!--password confirm-->
+            <tr>
+                <td rowspan="2"><label> Password Confirm</label></td>
+                <td><input class="input_td" name="Password_confirm"  id="Password_confirm"type="password"></td>
+            </tr>
+            <tr>
+                <td> <span name="pass_conf_span" id="pass_conf_span">your Password is invalid</span> </td>
+            </tr>
+            <!--email-->
+            <tr>
+                <td rowspan="2"><label>Email</label></td>
+                <td><input class="input_td" name="user_email" id="user_email"  type="email"></td>
+            </tr>
+            <tr>
+                <td> <span name="email_span" id="email_span">Email is invalid</span> </td>
+            </tr>
+
+            <!--gender-->
+            <tr>
+                <td rowspan="2"><label>Gender</label></td>
+                <td>
+                    <input class="input_radio" type="radio" id="male" name="gender" value="Male" checked>
+                    <label for="male">Male</label><br>
+                    <input class="input_radio" type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label><br>
+                </td>
+
+            </tr>
+            <tr>
+                <td> <span name="gender_span" id="gender_span">Select gender</span> </td>
+            </tr>
+
+            <tr>
+                <td><input id="ok_btn" class="btn" type="submit" value="OK"></td>
+                <td><input id="cancle_btn" class="btn" type="reset" value="Cancle"></td>
+            </tr>
+        </table>
+
+    </form>
+    <script src="script.js"></script>
+
 </body>
+
 </html>
