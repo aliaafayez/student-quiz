@@ -64,18 +64,38 @@ window.addEventListener("load", function () {
         }
     });//end email blur
 
-    
+
 
 
     /*start submit validation */
     this.document.forms[0].addEventListener('submit', function (event) {
-        if (!isNameValid(userName.value) || !isPassValid(userPass.value) || !isEmailValid(userEmail.value) ) {
+        if (!isNameValid(userName.value) || !isPassValid(userPass.value) || !isEmailValid(userEmail.value)) {
             event.preventDefault();
 
         }
-        
+        /*local storage */
+        let gender = document.querySelector('input[name="gender"]:checked').value;
+
+
+        let user_records = [];
+        user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
+        if (user_records.some((v) => { return v.email == userEmail.value })) {
+            alert("duplicate data");
+        }
+        else {
+            user_records.push({
+                'name': userName.value,
+                'password': userPass.value,
+                'email': userEmail.value,
+                'gender': gender
+
+            })
+            localStorage.setItem("users", JSON.stringify(user_records));
+        }
 
     });/*end submit validation */
+
+
 
 
 
@@ -87,6 +107,9 @@ window.addEventListener("load", function () {
 
     }); /*end clear validation */
 
+
+
+
 });
 
 
@@ -95,7 +118,7 @@ window.addEventListener("load", function () {
 /*1-name regular expression */
 function isNameValid(user_name) {
     let nameRegEx = /^[a-zA-Z]{4,18}$/;
-    let trimInput=user_name.trim();
+    let trimInput = user_name.trim();
     return trimInput.match(nameRegEx);//return null or object
 }
 /*2-email validation */
@@ -106,9 +129,10 @@ function isEmailValid(email) {
 }
 /*3- password validation */
 function isPassValid(pass) {
-    let passRegEx = /^[1-9]{4,10}$/;
+    let passRegEx = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/;
     return pass.match(passRegEx);//return null or object
 }
+
 
 
 
