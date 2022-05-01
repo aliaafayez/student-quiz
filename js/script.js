@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
             passConfSpan.style.display = "none";
             userPassConf.classList.add("greenColor");
         }
-    });//end password blur
+    });//end password confirm blur
 
 
 
@@ -117,7 +117,7 @@ window.addEventListener("load", function () {
 /* Regular expression functions and another validation functions*/
 /*1-name regular expression */
 function isNameValid(user_name) {
-    let nameRegEx = /^[a-zA-Z]{4,18}$/;
+    let nameRegEx = /^[a-zA-Z0-9]{4,18}$/;
     let trimInput = user_name.trim();
     return trimInput.match(nameRegEx);//return null or object
 }
