@@ -20,7 +20,7 @@
                 <td><input class="input_td" name="user_Name" id="user_name"  type="text"></td>
             </tr>
             <tr>
-                <td> <span name="name_span" id="name_span">user name is invalid</span> </td>
+                <td> <span name="name_span" id="name_span">user name [4-18 characters which contains letters and numeric digits] </span> </td>
             </tr>
             <!--password-->
             <tr>
@@ -28,7 +28,8 @@
                 <td><input class="input_td" name="user_password" id="user_password" is="user_password" type="password"></td>
             </tr>
             <tr>
-                <td> <span name="pass_span" id="pass_span">your Password is invalid</span> </td>
+                <td> <span name="pass_span" id="pass_span">[6 to 16 characters which contain at least one special character, numeric digits,
+                     letters]</span> </td>
             </tr>
             <!--password confirm-->
             <tr>
@@ -49,7 +50,7 @@
 
             <!--gender-->
             <tr>
-                <td rowspan="2"><label>Gender</label></td>
+                <td ><label>Gender</label></td>
                 <td>
                     <input class="input_radio" type="radio" id="male" name="gender" value="Male" checked>
                     <label for="male">Male</label><br>
@@ -58,9 +59,7 @@
                 </td>
 
             </tr>
-            <tr>
-                <td> <span name="gender_span" id="gender_span">Select gender</span> </td>
-            </tr>
+            
 
             <tr>
                 <td><input id="ok_btn" class="btn" type="submit" value="OK"></td>
