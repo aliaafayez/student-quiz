@@ -39,3 +39,51 @@ tr{
     background-color: lightgreen;
 }
 /*end registration */
+
+/*start login */
+#container{
+    border: 1px solid  #6289AC;
+    background-color: #F2F2F2;
+    width: 40%;
+    height: 270px;
+    align-content: center;
+    margin: 140px auto;
+}
+.head{
+    text-align: center;
+    font-size: larger;
+}
+.user{
+    margin-left: 50px;
+    margin-right: 55px;
+}
+.pass{
+    margin-left: 50px;
+    margin-right: 38px;
+}
+#password1,#username1{
+    width: 277px;
+    height: 30px;
+    border: 1px solid #6289AC;
+}
+.part1{
+    margin-bottom: 30px;
+}
+ #submit1,#cancel1{
+    width: 131px;
+    border: 1px solid deepskyblue;
+    background-color: deepskyblue;
+    cursor: pointer;
+    color: white;
+    padding: 6px;
+    margin-left: 60px;
+    margin-top: 40px;   
+ }
+ #submit1{
+     margin-right: 49px;
+ }
+ #alert1{
+    display:none;
+    color:red;
+    margin-left: 181px;
+}
