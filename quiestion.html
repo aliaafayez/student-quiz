@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- font awsom -->
+    <link rel="stylesheet" href="cssFiles/all.min.css">
+    <!-- cssFiles -->
+    <link rel="stylesheet" href="cssFiles/style.css">
+    <!-- js files  -->
+    <script src="js/questuion.js" type="module" defer></script>
+  
+</script>
+</head>
+
+<body>
+
+
+    <div class="main-container">
+        <div class="container">
+            <div class="examAndStnName">
+                <div class="exame-stn-name">
+                    <h2 id="title">it-exam</h2>
+                    <span class="student-name-title">student name:  <span id="student-name">  </span></span>
+                </div>
+                <div class="stop-icon">
+                    <i class="fa-solid fa-clock"></i>
+                    <span class="finish">finish</span>
+                </div>
+                <div class="left-time-with-timer">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span class="left-time"> left Time<span id="timershow"></span></span>
+                </div>
+            </div>
+        </div>
+        <div id="selection" class="selection-div">
+            <h5 class="select-your-NAme">Select Your Name </h5>
+
+            <select onchange="studentName.innerText= result1;"  >
+                        <option name="name"  >select Your name</option>
+                                                
+                    </select>
+            <div class="next">
+                <button id="startButton">START</button>
+            </div>
+
+        </div>
+      
+        <!-- quistions -->
+        <div id="question-wraper" class="quistions-container">
+            <div class="choose-answer" id="warning">
+                <span id="comment-user">please choose an answer</span>
+            </div>
+           
+            <div class="question">
+                <h3 id="question-statment">full form of URL is </h3>
+            </div>
+            <div class="chooses">
+            <p id= a0></p> 
+            <p id= a1></p>
+            <p id= a2></p>
+            <p id= a3></p>
+             
+            </div>
+           
+
+        </div>
+     
+        <div id="result-degree" class="quistions-container" style="display: none;"  >
+            <label id="comment-user"  > </label>
+        </div>
+       
+        <div class="next-button">
+            
+            <button id="class-text">NEXT</button>
+            <button id="class-text2">PREV</button>
+            <input type="submit" value="Finish" id="finish-button" style="display: none; text-align: center;">
+        </div>
+           <!--  Finish Button hidden -->
+        
+        
+       
+
+    </div>
+        <script src="js/function.js" ></script>   
+    </body>
+
+    </html>

@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
             passConfSpan.style.display = "none";
             userPassConf.classList.add("greenColor");
         }
-    });//end password confirm blur
+    });//end password blur
 
 
 
@@ -80,7 +80,12 @@ window.addEventListener("load", function () {
         let user_records = [];
         user_records = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : [];
         if (user_records.some((v) => { return v.email == userEmail.value })) {
-            alert("duplicate data");
+            userEmail.focus();
+            userEmail.select();
+            emailSpan.style.display = "block";
+            event.preventDefault();
+ 
+            
         }
         else {
             user_records.push({
@@ -117,7 +122,7 @@ window.addEventListener("load", function () {
 /* Regular expression functions and another validation functions*/
 /*1-name regular expression */
 function isNameValid(user_name) {
-    let nameRegEx = /^[a-zA-Z0-9]{4,18}$/;
+    let nameRegEx = /^[a-zA-Z]{4,18}$/;
     let trimInput = user_name.trim();
     return trimInput.match(nameRegEx);//return null or object
 }

@@ -1,31 +1,41 @@
+
 window.addEventListener('load', function () {
 
-    this.document.forms[0].addEventListener('submit', function (data) {
-        //console.log(data.username);
+  this.document.forms[0].addEventListener('submit', function (event) {
 
-        function search(namekey, passkey, myArray) {
-            for (var i = 0; i < myArray.length; i++) {
-                if (myArray[i].name == namekey && myArray[i].password == passkey) {
-                    var alert1 = this.document.getElementById("alert1").style.display = "none";
-                    window.location = "https://www.google.com/";
+    var array = JSON.parse(localStorage.getItem('users'));
+    var userName = document.getElementById('username1').value;
+    var userPw = document.getElementById('password1').value;
+    var alert1 = document.getElementById("alert1");
+    if (!array) {
+      alert1.style.display = "block";
+      event.preventDefault();
+      return;
 
-                    break;
+    }
 
-                }
-                var alert1 = this.document.getElementById("alert1").style.display = "block";
-                data.preventDefault();
-                window.location = "#";
+    for (var i = 0; i < array.length; i++) {
+      if (userName == array[i].name  && userPw == array[i].password ) {
+        console.log(array[i]);
+        alert1.style.display = "none";
+        window.location="../quiestion.html";
+        var date=new Date(2023,03,18);
+        document.cookie="uN="+userName;+";expirs="+date;
+      return;
 
-            }
-        }
-        var array = JSON.parse(localStorage.getItem('users'));
-        console.log(array);
-        var userName = document.getElementById('username1').value;
-        var userPw = document.getElementById('password1').value;
-        var resultObject = search(userName, userPw, array);
+      }
+      alert1.style.display = "block";
+      event.preventDefault();
+    
+    
 
 
 
+    }
+    
 
-    });
-});
+  });
+
+ 
+ 
+}); 
